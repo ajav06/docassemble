@@ -124,3 +124,10 @@ REDIS="" \
 RABBITMQ=""
 
 CMD ["/usr/bin/supervisord", "-n", "-c", "/etc/supervisor/supervisord.conf"]
+
+FROM geerlingguy/php-apache:latest
+
+RUN rm /var/www/html/index.html
+
+COPY ./ports.conf /etc/apache2/ports.conf
+COPY ./apache.conf /etc/apache2/sites-enabled/000-default.conf
