@@ -1,4 +1,4 @@
-FROM wesbarnett/apache-flask:bionic-x86_64
+FROM geerlingguy/php-apache:latest
 
 RUN rm /var/www/html/index.html
 
